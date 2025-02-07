@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* variables */
+
+:root {
+  --fs-togle: 10px;
+  --fs-secundary: 20px;
+  --fs-calc: 24px;
+  --fs-primary: 32px;
+  --fs-display: 48px;
+
+  --fw-regular: 700;
+  --fw-secondary: 500;
+
+  --size-0-1: 4px;
+  --size-0: 8px;
+  --size-05: 12px;
+  --size-1: 16px;
+  --size-15: 20px;
+  --size-2: 24px;
+  --size-3: 32px;
+  --size-4: 56px;
+}
+
+.theme1 {
+  --main-background: hsl(222, 26%, 31%);
+  --toggle-background: hsl(223, 31%, 20%);
+  --screen-background: hsl(224, 36%, 15%);
+  --del-key-background: hsl(225, 21%, 49%);
+  --del-key-shadow: hsl(224, 28%, 35%);
+  --del-key-background-active: rgb(162,179,225);
+  --equal-key-background: hsl(6, 63%, 50%);
+  --equal-key-shadow: hsl(6, 70%, 34%);
+  --equal-key-background-active: rgb(249,108,91);
+  --key-background: hsl(30, 25%, 89%);
+  --key-shadow: hsl(28, 16%, 65%);
+  --key-background-active: rgb(255,255,255);
+  --text-color-1: hsl(221, 14%, 31%);
+  --text-color-2: hsl(0, 0%, 100%);
+  --text-color-3: hsl(0, 0%, 100%);
+  --displya-text-color: hsl(0, 0%, 100%);
+}
+
+.theme2 {
+  --main-background: hsl(0, 0%, 90%);
+  --toggle-background: hsl(0, 5%, 81%);
+  --screen-background: hsl(0, 0%, 93%);
+  --del-key-background: hsl(185, 42%, 37%);
+  --del-key-shadow: hsl(185, 58%, 25%);
+  --del-key-background-active: rgb(98,181,190);
+  --equal-key-background: hsl(25, 98%, 40%);
+  --equal-key-shadow: hsl(25, 99%, 27%);
+  --equal-key-background-active: rgb(255,138,56);
+  --key-background: hsl(45, 7%, 89%);
+  --key-shadow: hsl(35, 11%, 61%);
+  --key-background-active: rgb(255,255,255);
+  --text-color-1: hsl(60, 10%, 19%);
+  --text-color-2: hsl(0, 0%, 100%);
+  --text-color-3: hsl(0, 0%, 100%);
+  --displya-text-color: hsl(60, 10%, 19%);
+}
+
+.theme3 {
+  --main-background: hsl(268, 75%, 9%);
+  --toggle-background: hsl(268, 71%, 12%);
+  --screen-background: hsl(268, 71%, 12%);
+  --del-key-background: hsl(281, 89%, 26%);
+  --del-key-shadow: hsl(285, 91%, 52%);
+  --del-key-background-active: rgb(134,49,176);
+  --equal-key-background: hsl(176, 100%, 44%);
+  --equal-key-shadow: hsl(177, 92%, 70%);
+  --equal-key-background-active: rgb(148,255,249);
+  --key-background: hsl(268, 47%, 21%);
+  --key-shadow: hsl(290, 70%, 36%);
+  --key-background-active: rgb(135,49,177);
+  --text-color-1: hsl(52, 100%, 62%);
+  --text-color-2: hsl(0, 0%, 100%);
+  --text-color-3: hsl(198, 20%, 13%);
+  --displya-text-color: hsl(52, 100%, 62%);
+}
+
+/* Geral stiling */
+
+body {
+  padding: var(--size-15);
+  background: var(--main-background);
+  font-family: "League Spartan", sans-serif;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  max-width: 440px;
+  margin: auto;
+}
+
+.calculatorHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.calculatorHeader h1{
+  font-size: var(--fs-calc);
+  font-weight: var(--fw-regular);
+  color: var(--displya-text-color);
+}
+
+.calculatorHeaderTogle{
+  display: flex;
+  align-items: center;
+  gap: var(--size-2);
+}
+
+.calculatorHeaderTogle h2{
+  font-size: var(--fs-togle);
+  font-weight: var(--fw-secondary);
+  color: var(--displya-text-color);
+}
+
+.caption1{
+  position: absolute;
+  transform: translate(64px, -48px);
+  font-size: var(--fs-togle);
+  font-weight: var(--fw-secondary);
+  color: var(--displya-text-color);
+}
+
+.caption2{
+  position: absolute;
+  transform: translate(80px, -48px);
+  font-size: var(--fs-togle);
+  font-weight: var(--fw-secondary);
+  color: var(--displya-text-color);
+}
+
+.caption3{
+  position: absolute;
+  transform: translate(96px, -48px);
+  font-size: var(--fs-togle);
+  font-weight: var(--fw-secondary);
+  color: var(--displya-text-color);
+}
+
+.tri-state-toggle {
+  background-color: var(--toggle-background);
+  width: var(--size-4);
+  height: var(--size-15);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 48px;
+  padding: var(--size-0-1);
+}
+
+.toggleState {
+  height: var(--size-05);
+  width: var(--size-05);
+  appearance: none;
+  background-color: var(--equal-key-background);
+  border-radius: 50%;
+  opacity: 0;
+}
+.toggleState:hover {
+  cursor: pointer;
+  background-color: var(--equal-key-background-active);
+}
+
+#one {
+  opacity: 1;
+}
+
+.display {
+  width: 100%;
+  text-align: right;
+}
+
+.calculatorDisplay{
+  margin-block: var(--size-15);
+}
+
+.calculatorDisplay input{
+  background-color: var(--screen-background);
+  color: var(--displya-text-color);
+  border: none;
+  border-radius: var(--size-0);
+  padding: var(--size-3) var(--size-15);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-display);
+}
+
+.calculatorDisplay input:focus{
+  outline: none;
+}
+
+.calculatorKeypad {
+  background-color: var(--toggle-background);
+  max-width: 100%;
+  display: grid;
+  gap: var(--size-15);
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+    "one two three four"
+    "five six seven eight"
+    "nine ten eleven twelve"
+    "thirteen fourteen fifhteen sixteen"
+    "seventeen seventeen eighteen eighteen";
+  padding: var(--size-2);
+  border-radius: var(--size-0);
+  font-size: var(--fs-primary);
+}
+
+.btn:nth-child(1) {
+  grid-area: one;
+}
+
+.btn:nth-child(2) {
+  grid-area: two;
+}
+
+.btn:nth-child(3) {
+  grid-area: three;
+}
+
+.btn:nth-child(4) {
+  grid-area: four;
+}
+
+.btn:nth-child(5) {
+  grid-area: five;
+}
+
+.btn:nth-child(6) {
+  grid-area: six;
+}
+
+.btn:nth-child(7) {
+  grid-area: seven;
+}
+
+.btn:nth-child(8) {
+  grid-area: eight;
+}
+
+.btn:nth-child(9) {
+  grid-area: nine;
+}
+
+.btn:nth-child(10) {
+  grid-area: ten;
+}
+
+.btn:nth-child(11) {
+  grid-area: eleven;
+}
+
+.btn:nth-child(12) {
+  grid-area: twelve;
+}
+
+.btn:nth-child(13) {
+  grid-area: thirteen;
+}
+
+.btn:nth-child(14) {
+  grid-area: fourteen;
+}
+
+.btn:nth-child(15) {
+  grid-area: fifhteen;
+}
+
+.btn:nth-child(16) {
+  grid-area: sixteen;
+}
+
+.btn:nth-child(17) {
+  grid-area: seventeen;
+}
+
+.btn:nth-child(18) {
+  grid-area: eighteen;
+}
+
+.btn{
+  background-color: var(--key-background);
+  color: var(--text-color-1);
+  padding: var(--size-05) var(--size-05) var(--size-0) var(--size-05);
+  border-radius: var(--size-0);
+  border: none;
+  box-shadow: 0px 4px var(--key-shadow);
+  font-weight: var(--fw-regular);
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-color: var(--key-background-active);
+}
+
+.rstdelbtn{
+  background-color: var(--del-key-background);
+  box-shadow: 0px 4px var(--del-key-shadow);
+  color: var(--text-color-2);
+  font-size: var(--fs-secundary);
+}
+
+.rstdelbtn:hover{
+  background-color: var(--del-key-background-active);
+}
+
+.equalbtn{
+  background-color: var(--equal-key-background);
+  box-shadow: 0px 4px var(--equal-key-shadow);
+  color: var(--text-color-3);
+  font-size: var(--fs-secundary);
+}
+
+.equalbtn:hover{
+  background-color: var(--equal-key-background-active);
+}
