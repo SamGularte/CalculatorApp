@@ -364,6 +364,12 @@ body {
   background-color: var(--key-background-active);
 }
 
+@media (max-width: 450px) {
+  .btn{
+    padding: var(--size-1) var(--size-05) var(--size-05) var(--size-05);
+  }
+}
+
 .rstdelbtn{
   background-color: var(--del-key-background);
   box-shadow: 0px 4px var(--del-key-shadow);
