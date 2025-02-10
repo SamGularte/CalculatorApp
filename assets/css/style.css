@@ -277,6 +277,12 @@ body {
   font-size: var(--fs-primary);
 }
 
+@media (max-width: 450px) {
+  .calculatorKeypad {
+    gap: var(--size-1);
+  }
+}
+
 .btn:nth-child(1) {
   grid-area: one;
 }
