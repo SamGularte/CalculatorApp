@@ -167,7 +167,7 @@ body {
   align-items: flex-end;
 }
 
-.calculatorHeader h1{
+.displayHeader{
   font-size: var(--fs-calc);
   font-weight: var(--fw-regular);
   color: var(--displya-text-color);

@@ -13,13 +13,13 @@
 
   <main class="container">
     <section class="calculatorHeader">
-      <h1>calc</h1>
+      <label class="displayHeader" for="display">calc</label>
       <div class="calculatorHeaderTogle">
         <div>
           <h2>THEME</h2>
-          <label class="caption1">1</label>
-          <label class="caption2">2</label>
-          <label class="caption3">3</label>
+          <label class="caption1" for="one">1</label>
+          <label class="caption2" for="two">2</label>
+          <label class="caption3" for="three">3</label>
         </div>
         <div class="tri-state-toggle">
           <input class="toggleState" type="radio" name="toggle" id="one" />   
@@ -30,7 +30,7 @@
     </section>
     
     <section class="calculatorDisplay">
-      <input type="text" class="display" readonly>
+      <input type="text" class="display" id="display" readonly>
     </section>
 
     <section class="calculatorKeypad">
